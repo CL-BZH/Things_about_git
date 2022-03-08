@@ -5,7 +5,7 @@ The aim of this tutorial is to show how to set up 2 different GitHub accounts an
 ## Step 1:
 Create 2 GitHub accounts.  
 E.g. `<fullname>` and `<dummy-fullname>` accounts.  
-You will need 2 different email address but you can use an alias to the same email address (see for example alias in gmail or hotmail).
+You will need 2 different email addresses but you can use an alias to the same email address (see for example alias in gmail or hotmail).
 
 In each account add a repository. E.g. `Temp`.
 
@@ -13,7 +13,7 @@ In each account add a repository. E.g. `Temp`.
 Create 2 [ssh keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 
 Use 2 different names for saving the keys in `~/.ssh` directory.  
-For example, you can save the key for GitHub accound `<fullname>` using `~/.ssh/id_rsa` and the key for GitHub accound `<dummy-fullname>`  using `~/.ssh/id_rsa_dummy`.
+For example, you can save the key for GitHub account `<fullname>` using `~/.ssh/id_rsa` and the key for GitHub account `<dummy-fullname>`  using `~/.ssh/id_rsa_dummy`.
 
 ## Step 3:
 Add your SSH private keys to the ssh-agent.  
@@ -34,7 +34,7 @@ Following previous example:
 ## Step 4:
 Create/Update the ssh config file.  
 Open `~/.ssh/config` and add identity files for each GitHub accounts.  
-With the previous example, this could be the content of the config file:  
+With the previous example, the content of the config file would be:  
 ```
 Host github.com
   HostName github.com
@@ -96,7 +96,7 @@ If you want to simulate collaboration of `<user_2>` to the repository `<repo>` o
 - Open a terminal for `<user_2>` and do:
     - Remove all identities: `ssh-add -D`
     - Add the ssh key for user_2: `ssh-add ~/.ssh/id_rsa_dummy` 
-    - Clone `<repo>` from `<user_1>` using `git@github-dummy.com` (not `git@github.com`).
-    So, let's say that, as in previous example, the `<user_1>` account is named `<fullname>` and the repository is `Temp`, then the command is:  
-    `git clone git@github-dummy.com:<fullname>/Temp.git`
-    - Now `<user_2>` can push modifications in `<user_1>` repository `Temp`.
+    - Clone `<repo>` from `<user_1>` using `git@github-dummy.com` (not `git@github.com`).  
+    So, let's say that the `<user_1>` account is named `<fullname>` and the repository is `<repo>`, then the command is:  
+    `git clone git@github-dummy.com:<fullname>/<repo>.git`
+    - Now `<user_2>` can push modifications in `<user_1>` repository `<repo>`.
