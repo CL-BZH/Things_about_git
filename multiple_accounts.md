@@ -53,13 +53,15 @@ Host github-dummy.com
 You are ready ! 
 
 Let’s say your 2 GitHub accounts are `<fullname>` and `<dummy-fullname>` and in each you created a repository named `Temp`.  
-Then in each terminal do the following:
+Then, you could, for example, open 2 terminals and in each of them do the following:
 
 ### Terminal 1:
 ```console
 > mkdir Temp_1
 > cd Temp_1
 > git init
+> git config user.name "<user_1>" 
+> git config user.email "<user_1@example.com>"
 > touch temp.txt
 > git add temp.txt
 > git commit -m "first commit"
@@ -73,6 +75,8 @@ Then in each terminal do the following:
 > mkdir Temp_2
 > cd Temp_2
 > git init
+> git config user.name "<user_2>" 
+> git config user.email "<user_2@example.com>"
 > touch temp.txt
 > git add temp.txt
 > git commit -m "first commit"
@@ -82,3 +86,6 @@ Then in each terminal do the following:
 ```
 
 > Note that in Terminal 1 we are using `github.com` and in Terminal 2 we are using `github-dummy.com`.
+
+> In each repository we set the `user.name` and the `user.email` to prevent that the default user name and email address (set in `~/.gitconfig`) is used.  
+If we don't do that we would have the same user id for the commits pushed in the different GitHub accounts which would be quite confusing.
