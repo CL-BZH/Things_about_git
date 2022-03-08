@@ -91,7 +91,7 @@ Then, you could, for example, open 2 terminals and in each of them do the follow
 If we don't do that we would have the same user id for the commits pushed in the different GitHub accounts which would be quite confusing.
 
 ## Important
-If you want to simulate collabaration of `<user_2>` to the repository `<repo>` of `<user_1>` you have to follow the steps below:
+If you want to simulate collaboration of `<user_2>` to the repository `<repo>` of `<user_1>` you have to follow the steps below:
 - In the GitHub remote repository `<repo>` of `<user_1>`, add `<user_2>` as collaborator.
 - Open a terminal for `<user_2>` and do:
     - Remove all identities: `ssh-add -D`
@@ -99,4 +99,4 @@ If you want to simulate collabaration of `<user_2>` to the repository `<repo>` o
     - Clone `<repo>` from `<user_1>` using `git@github-dummy.com` (not `git@github.com`).
     So, let's say that, as in previous example, the `<user_1>` account is named `<fullname>` and the repository is `Temp`, then the command is:  
     `git clone git@github-dummy.com:<fullname>/Temp.git`
-    - Now `<user_2>` can push modification in `<user_1>` repository `Temp`.
+    - Now `<user_2>` can push modifications in `<user_1>` repository `Temp`.
